@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { Routes, Route} from 'react-router-dom'
 import './App.css';
+import Padlock from './assets/padlock.png';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='logo'><img src={Padlock}/></div> 
+      <Routes>
+          <Route path='/' element={<SignIn/>} />
+          <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
+      <footer>Copyright © Your Website 2020.</footer>
     </div>
   );
 }
