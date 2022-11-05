@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import Button from './Button';
-import { InputFirstName, InputLastName, InputPassword, InputMail } from './Validation';
+import { InputFirstName, InputLastName, InputPassword, InputMail, EMAIL_REGEXP, PASSWORD_REGEXP } from './Validation';
 
 const signUp = () => {
     const [valueEmail, setValueEmail] = useState('');
@@ -64,7 +64,7 @@ const signUp = () => {
                 </p>
                 
                 <Button
-                disabled={!(valuePassword && valueEmail && valueLastName && valueFirstName)}>
+                disabled={!(EMAIL_REGEXP.test(valueEmail) && PASSWORD_REGEXP.test(valuePassword) && valueLastName.length > 2 && valueFirstName.length > 2)}>
                     SIGN UP</Button>
                 <p className='wrapper-links'>
                     <Link className='link' to={'/'}>Already have an account? Sign in</Link>

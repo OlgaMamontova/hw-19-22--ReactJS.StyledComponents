@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import Button from './Button';
-import { InputPassword, InputMail } from './Validation';
+import { InputPassword, InputMail, EMAIL_REGEXP, PASSWORD_REGEXP } from './Validation';
 
 const signIn = () => {
     const [valueEmail, setValueEmail] = useState('');
@@ -39,7 +39,7 @@ const signIn = () => {
                     <label htmlFor="remember">Remember me</label>
                 </p>
                 <Button 
-                 disabled={!(valuePassword && valueEmail)}
+                 disabled={!(EMAIL_REGEXP.test(valueEmail) && PASSWORD_REGEXP.test(valuePassword))}
                 >SIGN IN</Button>
                 <p className='wrapper-links'>                    
                     <Link to={'/signup'} className='link'>Don't have an account? Sign Up</Link>
