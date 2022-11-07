@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <div className='logo'><img src={Padlock}/></div> 
       <Routes>
-          <Route exact path='*' element={<SignIn/>} />
+          <Route exact path='/' element={<SignIn/>} />
           <Route exact path='/signup' element={<SignUp/>}/>
       </Routes>
       <footer>Copyright © Your Website 2020.</footer>
