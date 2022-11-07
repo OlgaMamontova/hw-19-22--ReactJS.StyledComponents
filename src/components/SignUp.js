@@ -67,7 +67,7 @@ const signUp = () => {
                 disabled={!(EMAIL_REGEXP.test(valueEmail) && PASSWORD_REGEXP.test(valuePassword) && valueLastName.length > 2 && valueFirstName.length > 2)}>
                     SIGN UP</Button>
                 <p className='wrapper-links'>
-                    <Link className='link' to={'/'}>Already have an account? Sign in</Link>
+                    <Link className='link' to={'/signin'}>Already have an account? Sign in</Link>
                     </p>
             </form>
         </div>
